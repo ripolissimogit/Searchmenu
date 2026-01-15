@@ -10,7 +10,7 @@ export default function ChatPage() {
     const cities = ['Milano', 'Roma', 'Torino', 'Napoli', 'Bologna', 'Firenze'];
 
     // Add message to chat
-    function addMessage(type: string, text: string, isHTML = false) {
+    function addMessage(type: string, text: string) {
       const messagesContainer = document.getElementById('chatMessages');
       if (!messagesContainer) return;
 
@@ -19,12 +19,7 @@ export default function ChatPage() {
       
       const bubble = document.createElement('div');
       bubble.className = 'message-bubble';
-      
-      if (isHTML) {
-        bubble.innerHTML = text;
-      } else {
-        bubble.textContent = text;
-      }
+      bubble.textContent = text;
       
       messageDiv.appendChild(bubble);
       messagesContainer.appendChild(messageDiv);
